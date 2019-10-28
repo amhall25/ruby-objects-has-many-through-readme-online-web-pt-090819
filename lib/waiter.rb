@@ -7,7 +7,7 @@ attr_accessor :name, :years_experience
     @name = name
     @years_experience = years_experience
     @@all << self
-    @meals=[]
+    
   end
 
   def self.all
@@ -15,13 +15,14 @@ attr_accessor :name, :years_experience
   end
 
   def new_meal(customer, total, tip)
-    meal_ = Meal.new(self, customer, total, tip)
-    @meals << meal_
-      
+     Meal.new(self, customer, total, tip)
+    
   end
   
   def meals
-    @meals
+    Meal.all.select do |meal|
+    meal.waiter == self
+  end
     
   end
   
