@@ -15,8 +15,8 @@ attr_accessor :name, :years_experience
   end
 
   def new_meal(customer, total, tip)
-    meal = Meal.new(self, customer, total, tip)
-    @meals << meal
+    meal_ = Meal.new(self, customer, total, tip)
+    @meals << meal_
       
   end
   
