@@ -26,8 +26,8 @@ attr_accessor :name, :years_experience
   end
   
   def best_tipper
-    meals.select do |meal|
-      meal.tip.max
+    meals.map {|meal| meal.tip}
+    
     end
   end
   
