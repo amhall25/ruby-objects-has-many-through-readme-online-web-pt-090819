@@ -22,8 +22,13 @@ attr_accessor :name, :years_experience
   def meals
     Meal.all.select do |meal|
     meal.waiter == self
+    end
   end
-    
+  
+  def best_tipper
+    meals.select do |meal|
+      meal.tip.max
+    end
   end
   
 end
